@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* for Safari */
+  -moz-box-sizing: border-box;
+  /* for Firefox */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------------------------------------- */
+/* Mixins & Media Queries */
+/* -------------------------------------------------------- */
+/* App component */
+#container-main {
+  background-color: #e1e1e1;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+#container-cronometer {
+  height: 300px;
+  width: 324px;
+  position: relative;
+}
+
+#container-cronometer #cronometer-border {
+  background-color: #ee7511;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  left: 12px;
+  -webkit-clip-path: polygon(0px 45px, 45px 0px, 255px 0px, 300px 45px, 300px 255px, 255px 300px, 45px 300px, 0px 255px);
+          clip-path: polygon(0px 45px, 45px 0px, 255px 0px, 300px 45px, 300px 255px, 255px 300px, 45px 300px, 0px 255px);
+}
+
+#container-cronometer #cronometer-border #cronometer {
+  background-color: #181818;
+  height: 288px;
+  width: 288px;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  -webkit-clip-path: polygon(12px 42px, 42px 0px, 244px 0px, 278px 42px, 278px 244px, 244px 288px, 42px 288px, 12px 246px);
+          clip-path: polygon(12px 42px, 42px 0px, 244px 0px, 278px 42px, 278px 244px, 244px 288px, 42px 288px, 12px 246px);
+}
+
+#container-cronometer #cronometer-border #cronometer #displays #display-session {
+  height: 105px;
+  width: 115px;
+  padding: 5px;
+  position: absolute;
+  top: 5px;
+  left: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#container-cronometer #cronometer-border #cronometer #displays #display-session label {
+  text-align: center;
+  font-weight: 500;
+  padding: 0px 0px 8px 0px;
+  font-size: 0.9rem;
+}
+
+#container-cronometer #cronometer-border #cronometer #displays #display-session #session-length {
+  background-color: #2a2a2a;
+  height: 60px;
+  width: 60px;
+  position: relative;
+  border: 2px solid #ee7511;
+  border-radius: 5px;
+}
+
+#container-cronometer #cronometer-border #cronometer #displays #display-break {
+  height: 105px;
+  width: 110px;
+  padding: 5px;
+  position: absolute;
+  top: 5px;
+  left: 146px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#container-cronometer #cronometer-border #cronometer #displays #display-break label {
+  text-align: center;
+  font-weight: 500;
+  padding: 0px 0px 8px 0px;
+  font-size: 0.9rem;
+}
+
+#container-cronometer #cronometer-border #cronometer #displays #display-break #break-length {
+  background-color: #2a2a2a;
+  height: 60px;
+  width: 60px;
+  position: relative;
+  border: 2px solid #ee7511;
+  border-radius: 5px;
+}
+
+#container-cronometer #cronometer-border #cronometer #displays #display-clock {
+  height: 120px;
+  width: 220px;
+  position: absolute;
+  top: 115px;
+  left: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+#container-cronometer #cronometer-border #cronometer #displays #display-clock #timer-clock {
+  background-color: #2a2a2a;
+  height: 105px;
+  width: 160px;
+  position: relative;
+  border-radius: 5px;
+}
+
+#container-cronometer #cronometer-border #cronometer #displays #display-clock #timer-clock label {
+  font-weight: 500;
+  padding: 10px 0 0px 0;
+  font-size: 1.1rem;
+}
+
+#container-cronometer #cronometer-border #cronometer #displays #display-clock #timer-clock #time-left {
+  font-size: 2.5rem;
+}
+
+#container-cronometer #cronometer-border #cronometer #container-controls {
+  height: 62px;
+  width: 180px;
+  position: absolute;
+  top: 230px;
+  left: 56px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#container-cronometer #cronometer-border #cronometer #container-controls button {
+  background-color: #181818;
+  border-radius: 1.25rem;
+  border: none;
+}
+
+#container-cronometer #cronometer-border #cronometer #container-controls #start_stop,
+#container-cronometer #cronometer-border #cronometer #container-controls #stop {
+  font-size: 1.7rem;
+  color: #ee7511;
+}
+
+#container-cronometer #cronometer-border #cronometer #container-controls #reset {
+  font-size: 1.45rem;
+  color: #ee7511;
+}
+
+footer a {
+  display: inline-block;
+  padding: 25px;
+  color: #2a2a2a;
+  font-size: 0.9rem;
+  font-style: italic;
+  text-decoration: none;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+footer a:hover {
+  color: #ee7511;
+  -webkit-transform: translateY(0.5rem);
+          transform: translateY(0.5rem);
+}
+
+/* Buttons component */
+#session-increment {
+  background-color: #ee7511;
+  height: 36px;
+  width: 12px;
+  position: absolute;
+  border: none;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 0px;
+  left: 24px;
+}
+
+#session-decrement {
+  background-color: #ee7511;
+  height: 36px;
+  width: 12px;
+  position: absolute;
+  border: none;
+  top: 55px;
+  left: 0px;
+}
+
+#break-increment {
+  background-color: #ee7511;
+  height: 36px;
+  width: 12px;
+  position: absolute;
+  border: none;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 0px;
+  left: 288px;
+}
+
+#break-decrement {
+  background-color: #ee7511;
+  height: 36px;
+  width: 12px;
+  position: absolute;
+  border: none;
+  top: 55px;
+  left: 312px;
+}
+/*# sourceMappingURL=App.css.map */
