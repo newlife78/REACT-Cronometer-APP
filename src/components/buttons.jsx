@@ -21,9 +21,3 @@ class Buttons extends Component {
   }
 }
 export default Buttons;
-
-//      <div id="container-buttons">
-//        {buttons.map((button) => (
-//          <button key={button.id} id={button.id} value={button.value}></button>
-//        ))}
-//      </div>;
