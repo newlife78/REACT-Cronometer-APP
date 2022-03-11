@@ -3,9 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  /* for Safari */
   -moz-box-sizing: border-box;
-  /* for Firefox */
 }
 
 body {
@@ -38,8 +36,6 @@ body {
 #container-main {
   background-color: #e1e1e1;
   height: 100vh;
-  // See: z-index
-  // https://www.youtube.com/watch?v=l55hSbBUdmQ
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,16 +65,11 @@ body {
     );
     #cronometer {
       background-color: #181818;
-      height: 288px; //292
-      width: 288px; //292
+      height: 288px;
+      width: 288px;
       position: absolute;
-      top: 6px; //6
-      left: 6px; //6
-      //See: https://www.youtube.com/watch?v=SFrPyuVSdqQ
-      // Using 'clip-path: polygon' all us to define points (x, y)
-      // Top left corner: (0% 0%) / Top right corner: (100% 0%) / Button right corner: (100% 100%) / Button left corner: (0% 100%)
-      // See: https://www.youtube.com/watch?v=IVCR7VkVj2o  (offset-path)
-      // See: https://www.youtube.com/watch?v=LcEWiL7FClw
+      top: 6px;
+      left: 6px;
       clip-path: polygon(
         12px 42px,
         42px 0px,
@@ -89,20 +80,8 @@ body {
         42px 288px,
         12px 246px
       );
-      //0px 43px,
-      //43px 0px,
-      //249px 0px,
-      //292px 43px,
-      //292px 249px,
-      //249px 292px,
-      //43px 292px,
-      //0px 249px
-      //
-      //300px 101px,
-      //0px 101px
       #displays {
         #display-session {
-          //background-color: yellow;
           height: 105px;
           width: 115px;
           padding: 5px;
@@ -129,7 +108,6 @@ body {
           }
         }
         #display-break {
-          //background-color: yellowgreen;
           height: 105px;
           width: 110px;
           padding: 5px;
@@ -156,7 +134,6 @@ body {
           }
         }
         #display-clock {
-          //background-color: cyan;
           height: 120px;
           width: 220px;
           position: absolute;
@@ -172,7 +149,6 @@ body {
             height: 105px;
             width: 160px;
             position: relative;
-            //border: 2px solid #ee7511;
             border-radius: 5px;
             label {
               font-weight: 500;
@@ -186,7 +162,6 @@ body {
         }
       }
       #container-controls {
-        //background-color: #e1e1e1;
         height: 62px;
         width: 180px;
         position: absolute;
@@ -216,7 +191,7 @@ body {
 
 footer {
   a {
-    display: inline-block; //necessary for '&:hover' to work
+    display: inline-block;
     padding: 25px;
     color: #2a2a2a;
     font-size: 0.9rem;
