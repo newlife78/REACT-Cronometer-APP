@@ -51,7 +51,6 @@ class App extends Component {
     };
     this.handleLengthTime = this.handleLengthTime.bind(this);
     this.countDown = this.countDown.bind(this);
-    //this.clockifyCountDown = this.clockifyCountDown.bind(this);
     this.timerControl = this.timerControl.bind(this);
     this.alarm = this.alarm.bind(this);
     this.timerPhaseControl = this.timerPhaseControl.bind(this);
@@ -61,11 +60,6 @@ class App extends Component {
   }
 
   handleLengthTime(event) {
-    // 'event.currentTarget' vs 'event.target':
-    // See: https://www.youtube.com/watch?v=SpatM1W5wRQ
-    // See: https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget
-    // 'event.currentTarget': is interesting to use when attaching the same event handler to several elements
-    // 'event.target': interesting to use to only the element that was clicked
     const { timerState, timerType, sessionLength, breakLength, timer } =
       this.state;
     if (timerState === "stopped") {
@@ -99,21 +93,11 @@ class App extends Component {
     }
   }
 
-  // See: recursion 'https://www.youtube.com/watch?v=6oDQaB2one8'
-  //countDown(fn, time) //'time' period before executing 'fn'
   countDown() {
     this.setState({
       timer: this.state.timer - 1,
     });
   }
-
-  // Extra function for countDown using 'Date().getTime()'
-  //clockifyCountDown() {
-  //  let currDateTime = new Date().getTime();
-  //  let newCurrDateTime = currDateTime + this.countDown();
-  //  let timerClock = newCurrDateTime - currDateTime;
-  //  this.clockFormat(timerClock);
-  //}
 
   alarm(time) {
     // alarm sound
@@ -150,9 +134,6 @@ class App extends Component {
   }
 
   timerControl() {
-    //See: 'setInterval' & 'clearInterval'
-    // https://www.youtube.com/watch?v=rBpRtu7GgpQ
-    // https://www.youtube.com/watch?v=CqDqHiamRHA
     let { timerState, timerInterval } = this.state;
     if (timerState === "stopped") {
       timerInterval = setInterval(() => {
@@ -181,7 +162,6 @@ class App extends Component {
 
   handleStop() {
     clearInterval(this.state.timerInterval);
-    //const audioBeep = document.getElementById("beep");
     this.audioBeep.pause();
     this.audioBeep.currentTime = 0;
     this.setState({
@@ -192,7 +172,6 @@ class App extends Component {
 
   handleReset() {
     clearInterval(this.state.timerInterval);
-    //const audioBeep = document.getElementById("beep");
     this.audioBeep.pause();
     this.audioBeep.currentTime = 0;
     this.setState({
