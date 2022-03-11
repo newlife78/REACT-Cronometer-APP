@@ -25,9 +25,3 @@ class Controls extends Component {
 }
 
 export default Controls;
-
-//        <button id="stop">
-//          <i class="fa-solid fa-circle-stop"></i>
-//        </button>;
-
-//          <i className="fa-solid fa-circle-stop"></i>
